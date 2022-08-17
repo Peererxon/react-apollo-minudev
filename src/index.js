@@ -12,12 +12,12 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
+  connectToDevTools: true,
   cache: new InMemoryCache(),
   link: new HttpLink({
     uri: "http://localhost:4000/graphql",
   }),
 });
-
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

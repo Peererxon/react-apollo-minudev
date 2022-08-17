@@ -2,20 +2,8 @@ import logo from "./logo.svg";
 import "./App.css";
 import { gql, useQuery } from "@apollo/client";
 import { Persons } from "./Persons";
-
-const ALL_PERSONS = gql`
-  query {
-    allPersons {
-      name
-      age
-      phone
-      address {
-        street
-        city
-      }
-    }
-  }
-`;
+import { PersonForm } from "./PersonForm";
+import { ALL_PERSONS } from "./persons/grahql-queries";
 
 function App() {
   const { data, loading, error } = useQuery(ALL_PERSONS);
@@ -36,6 +24,7 @@ function App() {
           </>
         )}
       </header>
+      <PersonForm />
     </div>
   );
 }
