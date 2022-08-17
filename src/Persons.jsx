@@ -10,11 +10,16 @@ const GET_PERSON_BY_NAME = gql`
     }
   }
 `;
+
+/* $nameToSearch es una variable */
 export const Persons = ({ persons }) => {
+  //Una lazy query es una consulta que se ejecuta solo cuando se necesita y no cuando se carga la pagina o en cada renderizacion
+  //Devuelve 2 cosas una funcion que ejeuta la consulta y el valor de respuesta de la consulta
   const [getPerson, result] = useLazyQuery(GET_PERSON_BY_NAME);
   const [person, setPerson] = React.useState(null);
 
   const handleClick = (name) => {
+    //Aqui en cada click llamamos a la consulta y le pasamos las variables necesarias que definimos en la consulta graphql
     getPerson({ variables: { nameToSearch: name } });
   };
 

@@ -12,8 +12,8 @@ import {
 } from "@apollo/client";
 
 const client = new ApolloClient({
-  connectToDevTools: true,
-  cache: new InMemoryCache(),
+  connectToDevTools: true, //esto es un flag que nos permite interactuar con el devtools de chrome
+  cache: new InMemoryCache(), //con eso tenemos un cache en memoria para evitar hacer una peticion de la cual ya obtuvimos la data anteriormente
   link: new HttpLink({
     uri: "http://localhost:4000/graphql",
   }),

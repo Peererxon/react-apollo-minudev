@@ -6,6 +6,7 @@ import { PersonForm } from "./PersonForm";
 import { ALL_PERSONS } from "./persons/grahql-queries";
 
 function App() {
+  /* Se le envia al useQuery un tipo de consulta graphql y devuelve la data, cuando esta cargando y un flag de error */
   const { data, loading, error } = useQuery(ALL_PERSONS);
   console.log("🚀 ~ file: App.js ~ line 22 ~ App ~ result", data);
   return (

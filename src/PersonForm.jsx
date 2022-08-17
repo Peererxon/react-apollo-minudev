@@ -11,6 +11,7 @@ export const PersonForm = () => {
   const [city, setCity] = useState("");
   const [createPerson] = useMutation(CREATE_PERSON, {
     /* Con esto le dicimos CUANDO tiene que hacer refetch, en este caso hara el refetch a ALL_Persons cuando esta mutacion sea realizada */
+    //con esto se mantiene la UI actualizada
     refetchQueries: [{ query: ALL_PERSONS }],
   });
 
